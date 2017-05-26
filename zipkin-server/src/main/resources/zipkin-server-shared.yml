@@ -151,8 +151,20 @@ logging:
 #     # log cassandra trace propagation
 #     com.datastax.driver.core.Message: 'TRACE'
 
+security:
+  basic:
+    enabled: ${ZIPKIN_SERVER_BASIC_AUTH_ENABLED:false}
+  user:
+    name: ${ZIPKIN_SERVER_BASIC_AUTH_USERNAME:""}
+    password: ${ZIPKIN_SERVER_BASIC_AUTH_PASSWORD:""}
+
 management:
   security:
+    basic:
+      enabled: ${ZIPKIN_SERVER_BASIC_AUTH_ENABLED:false}
+    user:
+      name: ${ZIPKIN_SERVER_BASIC_AUTH_USERNAME:""}
+      password: ${ZIPKIN_SERVER_BASIC_AUTH_PASSWORD:""}
     # do not lock-down metrics by default
     # https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-1.5-Release-Notes#actuator-security
     enabled: false
