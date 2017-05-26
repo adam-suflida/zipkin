@@ -116,6 +116,11 @@ zipkin-server is a drop-in replacement for the [scala query service](https://git
     * `STORAGE_TYPE`: SpanStore implementation: one of `mem`, `mysql`, `cassandra`, `elasticsearch`
     * `COLLECTOR_SAMPLE_RATE`: Percentage of traces to retain, defaults to always sample (1.0).
 
+### Basic Auth
+Below you can parameters responsible for basic authorization security:
+    * `ZIPKIN_SERVER_BASIC_AUTH_ENABLED`: The flag responsible for enabling basic auth mechanizm. Default to false.
+    * `ZIPKIN_SERVER_BASIC_AUTH_USERNAME` and `ZIPKIN_SERVER_BASIC_AUTH_PASSWORD`: Basic auth credentials.
+
 ### Cassandra Storage
 Zipkin's [Cassandra storage component](../zipkin-storage/cassandra)
 supports version 2.2+ and applies when `STORAGE_TYPE` is set to `cassandra`:
